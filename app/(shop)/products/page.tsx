@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { ProductGrid, ProductFilters } from "@/components/product";
-import { ChevronRight, SlidersHorizontal, ChevronDown } from "lucide-react";
+import { SlidersHorizontal, ChevronDown } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui";
 import Link from "next/link";
 import type { Product } from "@/types";
 
@@ -130,14 +131,12 @@ export default function ProductsPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 md:py-10">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 text-sm text-white/40 mb-8 font-medium">
-        <Link href="/" className="hover:text-white transition-colors">
-          Home
-        </Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <span className="text-white font-semibold">Casual</span>
-      </div>
+      <Breadcrumbs 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Casual" }
+        ]} 
+      />
 
       <div className="flex gap-8 items-start">
         {/* Filters sidebar — desktop */}

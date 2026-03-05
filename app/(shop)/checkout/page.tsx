@@ -3,8 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import { Input, Button, Spinner } from "@/components/ui";
+import { Input, Button, Spinner, Breadcrumbs } from "@/components/ui";
 import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/lib/utils";
 
@@ -75,14 +74,13 @@ export default function CheckoutPage() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-8 md:py-10">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-1.5 text-sm text-white/40 mb-8 font-medium">
-        <Link href="/" className="hover:text-white transition-colors">Home</Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <Link href="/cart" className="hover:text-white transition-colors">Cart</Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <span className="text-white font-semibold">Checkout</span>
-      </div>
+      <Breadcrumbs 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Cart", href: "/cart" },
+          { label: "Checkout" }
+        ]} 
+      />
 
       <h1
         className="text-4xl md:text-[44px] font-black uppercase mb-8 md:mb-10 tracking-tight text-gradient"

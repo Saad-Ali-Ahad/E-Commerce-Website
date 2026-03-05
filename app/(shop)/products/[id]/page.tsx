@@ -3,7 +3,8 @@
 import { use } from "react";
 import { ProductDetail } from "@/components/product";
 import { ProductGrid } from "@/components/product";
-import { Star, BadgeCheck, ChevronRight } from "lucide-react";
+import { Breadcrumbs } from "@/components/ui";
+import { Star, BadgeCheck } from "lucide-react";
 import Link from "next/link";
 import type { Product, Review } from "@/types";
 
@@ -130,14 +131,13 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-6">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-1 text-sm text-white/40 mb-6">
-        <Link href="/" className="hover:text-white transition-colors">Home</Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <Link href="/products" className="hover:text-white transition-colors">Shop</Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <span className="text-white font-medium">{product.name}</span>
-      </div>
+      <Breadcrumbs 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Shop", href: "/products" },
+          { label: product.name }
+        ]} 
+      />
 
       {/* Product detail */}
       <ProductDetail product={product} />

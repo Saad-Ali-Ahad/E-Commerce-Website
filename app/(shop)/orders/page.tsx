@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { ChevronRight, Package } from "lucide-react";
-import { Badge } from "@/components/ui";
+import { Package } from "lucide-react";
+import { Badge, Breadcrumbs } from "@/components/ui";
 import { formatPrice, formatDate } from "@/lib/utils";
 import type { Order } from "@/types";
 
@@ -95,12 +95,12 @@ const statusVariant = (status: string) => {
 export default function OrdersPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 lg:px-6 py-6">
-      {/* Breadcrumb */}
-      <div className="flex items-center gap-1 text-sm text-white/40 mb-6">
-        <Link href="/" className="hover:text-white transition-colors">Home</Link>
-        <ChevronRight size={14} className="text-white/20" />
-        <span className="text-white font-medium">My Orders</span>
-      </div>
+      <Breadcrumbs 
+        items={[
+          { label: "Home", href: "/" },
+          { label: "My Orders" }
+        ]} 
+      />
 
       <h1
         className="text-3xl md:text-4xl font-black uppercase mb-8 text-gradient"
