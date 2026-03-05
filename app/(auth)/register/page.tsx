@@ -46,7 +46,7 @@ export default function RegisterPage() {
           Sign up to start shopping at SHOP.CO
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {error && (
             <div className="bg-red-500/10 border border-red-400/20 text-red-300 text-sm rounded-xl px-4 py-3 backdrop-blur-sm">
               {error}
@@ -54,33 +54,38 @@ export default function RegisterPage() {
           )}
 
           <Input
+            label="Full Name"
             type="text"
-            placeholder="Full name"
+            placeholder="John Doe"
             value={name}
             onChange={(e) => setName(e.target.value)}
             required
           />
 
           <Input
+            label="Email Address"
             type="email"
-            placeholder="Email address"
+            placeholder="john@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
 
           <Input
+            label="Password"
             type="password"
-            placeholder="Password"
+            placeholder="••••••••"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
             minLength={6}
           />
 
-          <Button type="submit" className="w-full" size="lg" disabled={loading}>
-            {loading ? <Spinner className="h-5 w-5" /> : "Create Account"}
-          </Button>
+          <div className="pt-2">
+            <Button type="submit" className="w-full" size="lg" disabled={loading}>
+              {loading ? <Spinner className="h-5 w-5" /> : "Create Account"}
+            </Button>
+          </div>
         </form>
 
         <p className="text-center text-sm text-white/50 mt-6">

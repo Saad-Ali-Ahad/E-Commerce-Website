@@ -15,10 +15,10 @@ export const ROLES = {
 } as const;
 
 export const DRESS_STYLES = [
-  { name: "Casual", slug: "casual", image: "/images/styles/casual.jpg" },
-  { name: "Formal", slug: "formal", image: "/images/styles/formal.jpg" },
-  { name: "Party", slug: "party", image: "/images/styles/party.jpg" },
-  { name: "Gym", slug: "gym", image: "/images/styles/gym.jpg" },
+  { name: "Casual", slug: "casual", image: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80" },
+  { name: "Formal", slug: "formal", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" },
+  { name: "Party", slug: "party", image: "https://images.unsplash.com/photo-1492707892479-7bc8d5a4ee93?w=800&q=80" },
+  { name: "Gym", slug: "gym", image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" },
 ] as const;
 
 export const NAV_LINKS = [

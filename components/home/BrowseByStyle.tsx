@@ -1,11 +1,10 @@
 import Link from "next/link";
+import { DRESS_STYLES } from "@/lib/constants";
 
-const styles = [
-  { name: "Casual", slug: "casual", span: "col-span-1" },
-  { name: "Formal", slug: "formal", span: "col-span-2" },
-  { name: "Party", slug: "party", span: "col-span-2" },
-  { name: "Gym", slug: "gym", span: "col-span-1" },
-];
+const styles = DRESS_STYLES.map((ds, i) => ({
+  ...ds,
+  span: ["col-span-1", "col-span-2", "col-span-2", "col-span-1"][i],
+}));
 
 export default function BrowseByStyle() {
   return (
@@ -31,7 +30,7 @@ export default function BrowseByStyle() {
               <div
                 className="absolute inset-0 bg-cover bg-center group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] opacity-60 group-hover:opacity-80"
                 style={{
-                  backgroundImage: `url(/images/styles/${style.slug}.jpg)`,
+                  backgroundImage: `url(${style.image})`,
                 }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent group-hover:from-black/40 transition-colors duration-500"></div>

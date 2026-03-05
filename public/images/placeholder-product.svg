@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none">
+  <rect width="400" height="400" fill="#1a1a2e"/>
+  <rect x="1" y="1" width="398" height="398" rx="24" stroke="white" stroke-opacity="0.08" stroke-width="2"/>
+  <!-- T-shirt icon -->
+  <path d="M148 140 L148 120 C148 104 164 92 200 92 C236 92 252 104 252 120 L252 140 L280 128 L296 160 L264 176 L264 296 C264 300 260 304 256 304 L144 304 C140 304 136 300 136 296 L136 176 L104 160 L120 128 Z" stroke="white" stroke-opacity="0.15" stroke-width="3" fill="white" fill-opacity="0.04"/>
+  <text x="200" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="white" fill-opacity="0.2">No Image</text>
+</svg>

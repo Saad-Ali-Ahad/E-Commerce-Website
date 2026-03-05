@@ -61,7 +61,7 @@ export default function HeroSection() {
             {/* Hero image */}
             <div className="relative w-full h-full flex items-end justify-center z-10">
               <Image
-                src="/images/hero-models.png"
+                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80"
                 alt="Fashion models wearing stylish clothes"
                 width={600}
                 height={600}

@@ -17,7 +17,7 @@ export default function ProductCard({ product }: ProductCardProps) {
     <Link href={`/products/${product.id}`} className="group flex flex-col items-start w-full transition-all duration-500">
       <div className="relative w-full glass rounded-[24px] overflow-hidden aspect-square mb-5 group-hover:shadow-glass-hover group-hover:-translate-y-2 transition-all duration-500 ease-out">
         <Image
-          src={product.images[0] || "/images/placeholder-product.png"}
+          src={product.images[0] || "/images/placeholder-product.svg"}
           alt={product.name}
           fill
           className="object-cover object-center scale-100 group-hover:scale-110 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"

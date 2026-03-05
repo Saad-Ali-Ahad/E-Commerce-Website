@@ -45,7 +45,7 @@ export default function LoginPage() {
           Sign in to your SHOP.CO account
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-5">
           {error && (
             <div className="bg-red-500/10 border border-red-400/20 text-red-300 text-sm rounded-xl px-4 py-3 backdrop-blur-sm">
               {error}
@@ -53,34 +53,38 @@ export default function LoginPage() {
           )}
 
           <Input
+            label="Email Address"
             type="email"
-            placeholder="Email address"
+            placeholder="john@example.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
 
           <Input
+            label="Password"
             type="password"
-            placeholder="Password"
+            placeholder="••••••••"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
 
-          <div className="flex items-center justify-between text-sm">
-            <label className="flex items-center gap-2">
-              <input type="checkbox" className="rounded accent-purple-500 bg-white/10 border-white/20" />
-              <span className="text-white/50">Remember me</span>
+          <div className="flex items-center justify-between text-sm pt-1">
+            <label className="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" className="w-4 h-4 rounded accent-purple-500 bg-white/10 border-white/20 cursor-pointer" />
+              <span className="text-white/70 select-none">Remember me</span>
             </label>
-            <Link href="/forgot-password" className="text-white/50 hover:text-purple-300 transition-colors">
+            <Link href="/forgot-password" className="text-white/70 hover:text-purple-300 transition-colors">
               Forgot password?
             </Link>
           </div>
 
-          <Button type="submit" className="w-full" size="lg" disabled={loading}>
-            {loading ? <Spinner className="h-5 w-5" /> : "Sign In"}
-          </Button>
+          <div className="pt-2">
+            <Button type="submit" className="w-full" size="lg" disabled={loading}>
+              {loading ? <Spinner className="h-5 w-5" /> : "Sign In"}
+            </Button>
+          </div>
         </form>
 
         <p className="text-center text-sm text-white/50 mt-6">

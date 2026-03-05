@@ -50,7 +50,7 @@ export default function ProductDetail({ product }: ProductDetailProps) {
         {/* Main image */}
         <div className="relative flex-1 glass rounded-[32px] md:rounded-[40px] overflow-hidden aspect-square">
           <Image
-            src={product.images[selectedImage] || "/images/placeholder-product.png"}
+            src={product.images[selectedImage] || "/images/placeholder-product.svg"}
             alt={product.name}
             fill
             className="object-cover object-center scale-100 transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]"
