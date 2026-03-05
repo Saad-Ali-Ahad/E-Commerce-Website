@@ -39,30 +39,33 @@ export default function Footer() {
   return (
     <footer className="relative pt-10">
       {/* Newsletter CTA */}
-      <div className="max-w-7xl mx-auto px-4 lg:px-6">
-        <div className="glass-strong rounded-[32px] px-6 py-10 md:px-16 md:py-14 flex flex-col md:flex-row items-center justify-between gap-8 -mb-24 relative z-10 overflow-hidden">
-          {/* Decorative orbs */}
-          <div className="orb orb-purple w-64 h-64 -top-20 -left-20 absolute"></div>
-          <div className="orb orb-blue w-48 h-48 -bottom-10 right-10 absolute"></div>
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 mb-12">
+        <div className="bg-[#0b0c10] shadow-[0_0_0_1px_rgba(255,255,255,0.08),0_20px_50px_rgba(0,0,0,0.5)] rounded-[32px] px-6 py-10 md:px-16 md:py-12 flex flex-col md:flex-row items-center justify-between gap-8 relative z-20 overflow-hidden">
+          {/* Subtle mesh/glow effects */}
+          <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
+            <div className="absolute top-[-30%] left-[-10%] w-[40%] h-[120%] bg-purple-500/20 blur-[100px] rounded-full"></div>
+            <div className="absolute bottom-[-30%] right-[-10%] w-[40%] h-[120%] bg-blue-500/20 blur-[100px] rounded-full"></div>
+          </div>
+
           <h2
-            className="text-white text-3xl md:text-[40px] font-black leading-[1.1] max-w-md uppercase tracking-tight relative z-10"
+            className="text-white text-3xl md:text-[42px] font-black leading-[1.05] max-w-md uppercase tracking-tight relative z-10 drop-shadow-md"
             style={{ fontFamily: "var(--font-display), sans-serif" }}
           >
             STAY UP TO DATE ABOUT OUR LATEST OFFERS
           </h2>
-          <div className="flex flex-col gap-3 w-full md:w-auto md:min-w-[360px] relative z-10">
+          <div className="flex flex-col gap-3.5 w-full md:w-auto md:min-w-[400px] relative z-10">
             <div className="relative group">
               <Mail
-                size={18}
-                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/30 group-focus-within:text-purple-400 transition-colors"
+                size={20}
+                className="absolute left-4 top-1/2 -translate-y-1/2 text-white/40 group-focus-within:text-purple-400 transition-colors"
               />
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="w-full glass-input rounded-full pl-11 pr-4 py-3.5 text-sm font-medium"
+                className="w-full bg-[#1e2029] border border-white/5 outline-none text-white focus:ring-2 focus:ring-purple-500/50 rounded-full pl-12 pr-4 py-4 text-[15px] font-medium placeholder:text-white/40 shadow-inner transition-all hover:bg-[#252836]"
               />
             </div>
-            <button className="w-full btn-gradient rounded-full py-3.5 text-sm font-semibold hover:scale-[1.02] transition-all duration-300 active:scale-100">
+            <button className="w-full bg-white text-black hover:bg-gray-100 shadow-[0_4px_14px_0_rgba(255,255,255,0.15)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.23)] rounded-full py-4 text-[15px] font-bold hover:scale-[1.02] active:scale-[0.98] transition-all duration-300">
               Subscribe to Newsletter
             </button>
           </div>
@@ -70,7 +73,7 @@ export default function Footer() {
       </div>
 
       {/* Footer links */}
-      <div className="pt-36 pb-10 glass-dark border-t border-white/5">
+      <div className="pt-16 pb-10 glass-dark border-t border-white/5">
         <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <div className="grid grid-cols-2 md:grid-cols-5 gap-y-12 gap-x-8">
             {/* Brand column */}
