@@ -36,15 +36,15 @@ export default function HeroSection() {
             </Link>
 
             {/* Stats - Glass cards */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-8 gap-y-6 mt-16 max-w-2xl mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 sm:grid-cols-3 flex-wrap items-stretch gap-4 mt-12 lg:mt-16 w-full max-w-2xl mx-auto lg:mx-0">
               {[
                 { value: "200+", label: "International Brands" },
                 { value: "2,000+", label: "High-Quality Products" },
-                { value: "30,000+", label: "Happy Customers" },
+                { value: "30,000+", label: "Happy Customers", className: "col-span-2 sm:col-span-1" },
               ].map((stat) => (
-                <div key={stat.label} className="glass rounded-2xl px-6 py-4 text-center lg:text-left hover:-translate-y-1 transition-all duration-500">
-                  <p className="text-3xl sm:text-[40px] font-black text-white tracking-tight">{stat.value}</p>
-                  <p className="text-sm font-medium text-white/40 mt-1">
+                <div key={stat.label} className={`glass rounded-2xl px-5 py-4 text-center hover:-translate-y-1 hover:shadow-glass-hover transition-all duration-500 flex flex-col justify-center ${stat.className || ''}`}>
+                  <p className="text-3xl md:text-[36px] font-black text-white tracking-tight leading-none">{stat.value}</p>
+                  <p className="text-xs md:text-sm font-medium text-white/50 mt-2 leading-tight">
                     {stat.label}
                   </p>
                 </div>
@@ -52,30 +52,25 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right column — hero image */}
-          <div className="relative flex-1 w-full min-h-[450px] lg:min-h-[600px] flex items-center justify-center pt-8 lg:pt-0">
+          {/* Right column — hero image border */}
+          <div className="relative flex-1 w-full min-h-[450px] lg:min-h-[600px] flex items-center justify-center lg:justify-end pt-12 lg:pt-0 pb-10 lg:pb-0">
             {/* Glowing orbs behind model */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] bg-purple-500/20 rounded-full blur-[100px] animate-pulse-glow"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] lg:w-[500px] lg:h-[500px] bg-purple-500/20 rounded-full blur-[100px] animate-pulse-glow"></div>
             <div className="absolute top-1/3 left-1/3 w-[200px] h-[200px] bg-blue-500/15 rounded-full blur-[60px] animate-float-slow"></div>
 
-            {/* Hero image */}
-            <div className="relative w-full h-full flex items-end justify-center z-10">
-              <Image
-                src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600&q=80"
-                alt="Fashion models wearing stylish clothes"
-                width={600}
-                height={600}
-                className="object-contain object-bottom drop-shadow-[0_20px_60px_rgba(139,92,246,0.3)]"
-                priority
-              />
-            </div>
-
-            {/* Floating glass decorative elements */}
-            <div className="absolute top-20 right-10 glass rounded-2xl px-4 py-3 animate-float hidden lg:block">
-              <p className="text-xs font-bold text-white/70">✨ New Season</p>
-            </div>
-            <div className="absolute bottom-32 left-5 glass rounded-2xl px-4 py-3 animate-float-slow hidden lg:block">
-              <p className="text-xs font-bold text-white/70">🔥 Trending</p>
+            {/* Hero image card */}
+            <div className="relative w-full max-w-[420px] lg:max-w-[480px] aspect-[4/5] z-10 glass-strong p-3 md:p-4 rounded-[40px] md:rounded-[48px] shadow-[0_20px_60px_rgba(0,0,0,0.4)] transform hover:scale-[1.02] transition-transform duration-700">
+              <div className="relative w-full h-full rounded-[32px] md:rounded-[36px] overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&q=80"
+                  alt="Fashion models wearing stylish clothes"
+                  fill
+                  className="object-cover object-center"
+                  priority
+                />
+                {/* Internal gradient overlay for depth */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>
